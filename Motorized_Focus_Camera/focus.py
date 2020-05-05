@@ -13,7 +13,7 @@ def runfocus():
         print("press a / z to focus up / down, q to quit:")
         key = readchar.readkey()
         print(repr(key))
-        if key=='a':
+        if key == 'a':
             print(temp_val)
             print('UP')
             if temp_val < 1000:
@@ -23,9 +23,9 @@ def runfocus():
             value = (temp_val<<4) & 0x3ff0
             dat1 = (value>>8)&0x3f
             dat2 = value & 0xf0
-            #print("i2cset -y 0 0x0c %d %d" % (dat1,dat2))
-            os.system("i2cset -y 0 0x0c %d %d" % (dat1,dat2))
-        elif key=='z':
+            #print("i2cset -y 0 0x0c %d %d" % (dat1, dat2))
+            os.system("i2cset -y 0 0x0c %d %d" % (dat1, dat2))
+        elif key == 'z':
             print(temp_val)
             print('DOWN')
             if temp_val <12 :
@@ -35,9 +35,9 @@ def runfocus():
             value = (temp_val<<4) & 0x3ff0
             dat1 = (value>>8)&0x3f
             dat2 = value & 0xf0
-            #print("i2cset -y 0 0x0c %d %d" % (dat1,dat2))
-            os.system("i2cset -y 0 0x0c %d %d" % (dat1,dat2))
-        elif key=='q':
+            #print("i2cset -y 0 0x0c %d %d" % (dat1, dat2))
+            os.system("i2cset -y 0 0x0c %d %d" % (dat1, dat2))
+        elif key == 'q':
             print('Quitting!')
             quit()
 
